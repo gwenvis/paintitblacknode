@@ -15,9 +15,9 @@ function createDrawing() {
     }
 }
 
-app.get('/', function(req, res) {
-    res.sendFile('index.html');
-});
+createDrawing();
+
+app.use(express.static('./'));
 
 io.on('connection', function(socket) {
 
