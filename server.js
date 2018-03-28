@@ -25,6 +25,7 @@ io.on('connection', function(socket) {
 
     socket.on('draw', function(obj) {
         drawing[obj.index].color = obj.color;
+        io.emit('block', {index:obj.index,color:obj.color});
     });
 });
 
